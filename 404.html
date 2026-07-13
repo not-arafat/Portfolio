@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Page Not Found</title>
+  
+  <!-- Google Fonts for Accurate Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-primary: #FF0000;
+      --color-text-dark: #111118;
+      --color-text-muted: #8E929E;
+      --font-main: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: #FFFFFF;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Outer Wrapper Container */
+    .error-container {
+      text-align: center;
+      max-width: 580px;
+      padding: 0 24px;
+      z-index: 10;
+    }
+
+    /* 404 Text Layout with Low-Poly Polygonal Pattern & Vector Eyes */
+    .error-code-wrapper {
+      position: relative;
+      display: inline-block;
+      line-height: 1;
+      margin-bottom: 24px;
+      user-select: none;
+    }
+
+    .error-code {
+      font-size: clamp(120px, 16vw, 180px);
+      font-weight: 800;
+      color: var(--color-primary);
+      letter-spacing: -0.02em;
+      
+      /* Pure CSS Low-Poly Crystal Pattern Overlaid inside Text */
+      background: linear-gradient(135deg, rgba(0,0,0,0.15) 25%, transparent 25%) -50px 0,
+                  linear-gradient(225deg, rgba(0,0,0,0.15) 25%, transparent 25%) -50px 0,
+                  linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%),
+                  linear-gradient(315deg, rgba(0,0,0,0.15) 25%, #E50000 25%);
+      background-size: 60px 60px;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 4px 10px rgba(229, 0, 0, 0.15));
+    }
+
+    /* Vector Cartoon Eyes embedded strictly inside the positions of image */
+    .eye {
+      position: absolute;
+      background: #FFFFFF;
+      border-radius: 50%;
+      width: 14px;
+      height: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .eye::after {
+      content: '';
+      background: var(--color-text-dark);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+
+    /* Absolute positions cloned directly from reference design layout */
+    .eye-1 { top: 22%; left: 16%; width: 12px; height: 12px; }
+    .eye-1::after { width: 5px; height: 5px; }
+    
+    .eye-2 { top: 62%; left: 34%; }
+    .eye-3 { top: 32%; left: 47%; width: 16px; height: 16px; }
+    .eye-4 { top: 72%; left: 54%; width: 10px; height: 10px; }
+    .eye-4::after { width: 4px; height: 4px; }
+    
+    .eye-5 { top: 20%; left: 63%; }
+    .eye-6 { top: 65%; left: 81%; width: 12px; height: 12px; }
+    .eye-6::after { width: 5px; height: 5px; }
+
+    /* Typography Content Styles */
+    .error-title {
+      font-size: clamp(24px, 4vw, 32px);
+      font-weight: 800;
+      color: var(--color-primary);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .error-desc {
+      font-size: clamp(14px, 2.5vw, 15.5px);
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin-bottom: 32px;
+      font-weight: 400;
+      padding: 0 15px;
+    }
+
+    /* Go Home Structural Rounded Button */
+    .btn-home {
+      display: inline-block;
+      background-color: var(--color-primary);
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 12px 36px;
+      border-radius: 50px;
+      box-shadow: 0 4px 14px rgba(255, 0, 0, 0.25);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .btn-home:hover {
+      background-color: #D50000;
+      transform: translateY(-2px);
+    }
+
+    .btn-home:active {
+      transform: translateY(0);
+    }
+
+    /* Organic Liquid/Blob Vector Background Base Shapes */
+    .bg-shape-bottom {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 25vh;
+      background: #FFEBEB;
+      border-top-left-radius: 60% 70%;
+      z-index: 1;
+      transform: scaleY(1.1);
+      transform-origin: bottom right;
+    }
+
+    .bg-shape-left {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40vw;
+      height: 8vh;
+      background: #FFEBEB;
+      border-top-right-radius: 100% 100%;
+      z-index: 1;
+    }
+
+    @media (max-width: 480px) {
+      .eye { width: 10px; height: 10px; }
+      .eye::after { width: 4px; height: 4px; }
+      .error-code { letter-spacing: -0.04em; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Main Display Context -->
+  <div class="error-container">
+    <div class="error-code-wrapper">
+      <div class="error-code">404</div>
+      <!-- Hidden Vector Identity Eyes Inside Code Grid Structure -->
+      <div class="eye eye-1"></div>
+      <div class="eye eye-2"></div>
+      <div class="eye eye-3"></div>
+      <div class="eye eye-4"></div>
+      <div class="eye eye-5"></div>
+      <div class="eye eye-6"></div>
+    </div>
+
+    <h1 class="error-title">Page Not Found</h1>
+    <p class="error-desc">
+      Lorem ipsum dolor sit amet consectetur adipiscing elit maecenas tristique varius, a nisi vulputate taciti fames erat montes .
+    </p>
+    
+    <a href="/" class="btn-home">Go Home</a>
+  </div>
+
+  <!-- Smooth Corner Frame Shapes mimicking reference image layout -->
+  <div class="bg-shape-bottom"></div>
+  <div class="bg-shape-left"></div>
+
+</body>
+</html>
